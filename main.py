@@ -26,5 +26,8 @@ while True:
             x = int(landmark.x * frame_w)
             y = int(landmark.y * frame_h)
             cv2.circle(frame, (x, y), 3, (0, 255, 255))
+        if (left[0].y - left[1].y) < 0.004:
+            pyautogui.click()
+            pyautogui.sleep(1)
     cv2.imshow('Eye Cntrolled Mouse', frame)
     cv2.waitKey(1)
